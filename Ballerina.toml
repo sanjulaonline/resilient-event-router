@@ -1,0 +1,9 @@
+[package]
+org = "sanjula"
+name = "resilient_event_router"
+version = "0.1.0"
+distribution = "2201.13.5"
+authors = ["Sanjula"]
+license = ["Apache-2.0"]
+keywords = ["event", "router", "webhook", "resilience", "retry", "circuit-breaker", "iot", "integration"]
+repository = "https://github.com/sanjulaonline/resilient-event-router"

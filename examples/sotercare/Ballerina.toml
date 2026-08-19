@@ -1,0 +1,16 @@
+[package]
+org = "sotercare"
+name = "alert_router"
+version = "0.2.0"
+distribution = "2201.13.5"
+
+[build-options]
+observabilityIncluded = true
+
+# Resolved from the Ballerina local repository. Publish the library first:
+#   cd ../.. && bal pack && bal push --repository=local
+[[dependency]]
+org = "sanjula"
+name = "resilient_event_router"
+version = "0.1.0"
+repository = "local"

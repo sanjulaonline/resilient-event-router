@@ -1,0 +1,9 @@
+{
+  "eventId": "vitals-demo-001",
+  "deviceId": "esp32-bedroom-01",
+  "eventType": "vitals",
+  "value": 72.0,
+  "unit": "bpm",
+  "timestamp": 1786780800
+}
+

@@ -1,0 +1,4 @@
+servicePort = 9090
+notifierPort = 9091
+notifierBaseUrl = "http://localhost:9091"
+

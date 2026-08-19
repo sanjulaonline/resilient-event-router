@@ -1,0 +1,9 @@
+{
+  "eventId": "fall-demo-001",
+  "deviceId": "esp32-bedroom-01",
+  "eventType": "fall",
+  "value": 1.0,
+  "unit": "boolean",
+  "timestamp": 1786780800
+}
+
