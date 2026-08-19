@@ -10,7 +10,7 @@ observabilityIncluded = true
 # Resolved from the Ballerina local repository. Publish the library first:
 #   cd ../.. && bal pack && bal push --repository=local
 [[dependency]]
-org = "sanjula"
+org = "sanjulaonline"
 name = "resilient_event_router"
 version = "0.1.0"
 repository = "local"

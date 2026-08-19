@@ -1,4 +1,4 @@
-// Generic IoT consumer of sanjula/resilient_event_router.
+// Generic IoT consumer of sanjulaonline/resilient_event_router.
 //
 // Shows the two extension points: a classifier turns a device reading into a
 // severity, and a routing rule sends urgent readings to a paging endpoint and
@@ -8,7 +8,7 @@
 
 import ballerina/io;
 
-import sanjula/resilient_event_router as router;
+import sanjulaonline/resilient_event_router as router;
 
 configurable string telemetryUrl = "http://localhost:8291/telemetry";
 configurable string pagingUrl = "http://localhost:8291/paging";

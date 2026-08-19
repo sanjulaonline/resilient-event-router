@@ -1,6 +1,6 @@
 # Example: basic webhook
 
-The smallest consumer of `sanjula/resilient_event_router`. It sends one
+The smallest consumer of `sanjulaonline/resilient_event_router`. It sends one
 application event to an HTTP webhook and handles the typed outcome.
 
 ```text

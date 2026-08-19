@@ -3,12 +3,12 @@
 // The resource validates and classifies the sensor reading, then hands a
 // domain-neutral event to the router. Duplicate suppression, the outbound
 // timeout, transport retries, backoff and circuit breaking all live in
-// sanjula/resilient_event_router.
+// sanjulaonline/resilient_event_router.
 
 import ballerina/http;
 import ballerina/log;
 
-import sanjula/resilient_event_router as router;
+import sanjulaonline/resilient_event_router as router;
 
 configurable int servicePort = 9090;
 configurable string notifierBaseUrl = "http://localhost:9091";

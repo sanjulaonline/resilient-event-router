@@ -338,7 +338,7 @@ dependencies = [
 ]
 
 [[package]]
-org = "sanjula"
+org = "sanjulaonline"
 name = "resilient_event_router"
 version = "0.1.0"
 dependencies = [
@@ -350,6 +350,6 @@ dependencies = [
 	{org = "ballerina", name = "time"}
 ]
 modules = [
-	{org = "sanjula", packageName = "resilient_event_router", moduleName = "resilient_event_router"}
+	{org = "sanjulaonline", packageName = "resilient_event_router", moduleName = "resilient_event_router"}
 ]
 

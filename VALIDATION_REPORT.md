@@ -4,7 +4,7 @@ Validated on 19 August 2026 on Windows 11 (x86_64), using Git Bash and
 PowerShell 5.1.
 
 This run covers the repository after the SoterCare application was split into a
-reusable library (`sanjula/resilient_event_router`) and three example packages
+reusable library (`sanjulaonline/resilient_event_router`) and three example packages
 that consume it, and after the pre-publication API review that followed.
 
 ## Toolchain
@@ -65,7 +65,7 @@ bal run           # basic-webhook, generic-iot, sotercare
 
 ## Automated results
 
-### Library — `sanjula/resilient_event_router`
+### Library — `sanjulaonline/resilient_event_router`
 
 ```text
 51 passing
@@ -180,12 +180,12 @@ now measured rather than argued from reading the lock.
 
 ```text
 Compiling source
-	sanjula/resilient_event_router:0.1.0
+	sanjulaonline/resilient_event_router:0.1.0
 
 Creating bala
-	target\bala\sanjula-resilient_event_router-any-0.1.0.bala
+	target\bala\sanjulaonline-resilient_event_router-any-0.1.0.bala
 
-Successfully pushed target\bala\sanjula-resilient_event_router-any-0.1.0.bala to 'local' repository.
+Successfully pushed target\bala\sanjulaonline-resilient_event_router-any-0.1.0.bala to 'local' repository.
 ```
 
 The `.bala` contains only `bala.json`, `docs/README.md`,
@@ -196,7 +196,7 @@ the six library `.bal` files, `package.json` and `dependency-graph.json`. The
 
 ```json
 {
-  "organization": "sanjula",
+  "organization": "sanjulaonline",
   "name": "resilient_event_router",
   "version": "0.1.0",
   "licenses": ["Apache-2.0"],
@@ -388,6 +388,34 @@ setup-java v4 is deprecated ... migrate to actions/setup-java@v5
 
 `actions/cache@v3` comes in transitively through `setup-ballerina`. These are
 worth clearing in a later release; they do not affect `0.1.0`.
+
+
+## Organization change before release
+
+The Ballerina Central organization check — the last gate before tagging —
+returned `sanjulaonline` with admin authorization, not `sanjula`. The package
+identity was therefore corrected before any tag or publication existed:
+
+```text
+sanjula/resilient_event_router:0.1.0        ->  sanjulaonline/resilient_event_router:0.1.0
+sanjula-...-0.1.0.bala                      ->  sanjulaonline-resilient_event_router-any-0.1.0.bala
+```
+
+41 package-identity references were rewritten across 22 files with a
+`sanjula(?!online)` pattern, so the personal-name occurrences (`authors`, the
+Apache copyright headers) and the existing `sanjulaonline` GitHub URLs were left
+untouched. The stale `sanjula` package was deleted from
+`~/.ballerina/repositories/local` first, so the examples provably resolved the
+new identity rather than silently reusing the old one.
+
+This is also the reason the tag was deliberately created after the org check
+rather than before it: `b79acad` would have been the wrong release commit.
+
+Incidental finding during the same step: a `Settings.toml` containing a Central
+access token had been placed in the repository root, where `.gitignore` did not
+cover it. It was never staged, committed or pushed — verified against every
+commit tree — and was moved to `~/.ballerina/Settings.toml` with
+`Settings.toml` added to `.gitignore`.
 
 ## Not validated in this run
 

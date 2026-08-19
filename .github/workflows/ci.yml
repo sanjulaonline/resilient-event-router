@@ -55,7 +55,7 @@ jobs:
       - name: Publish the library to the local repository
         run: bal push --repository=local
 
-      # Each example resolves sanjula/resilient_event_router from the local
+      # Each example resolves sanjulaonline/resilient_event_router from the local
       # repository, so this is what proves the packed artifact is usable from
       # outside the library's own module.
       - name: Test and build the examples

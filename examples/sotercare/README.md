@@ -1,7 +1,7 @@
 # Example: SoterCare Alert Router
 
 The original project this repository grew out of, refactored into a consumer of
-`sanjula/resilient_event_router`.
+`sanjulaonline/resilient_event_router`.
 
 This is an engineering prototype built with synthetic data. It is not a medical
 device, a clinical decision system, or a production alerting service. The

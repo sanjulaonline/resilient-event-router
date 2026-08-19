@@ -326,14 +326,14 @@ dependencies = [
 	{org = "ballerina", name = "http"},
 	{org = "ballerina", name = "io"},
 	{org = "ballerina", name = "test"},
-	{org = "sanjula", name = "resilient_event_router"}
+	{org = "sanjulaonline", name = "resilient_event_router"}
 ]
 modules = [
 	{org = "example", packageName = "generic_iot", moduleName = "generic_iot"}
 ]
 
 [[package]]
-org = "sanjula"
+org = "sanjulaonline"
 name = "resilient_event_router"
 version = "0.1.0"
 dependencies = [
@@ -343,6 +343,6 @@ dependencies = [
 	{org = "ballerina", name = "time"}
 ]
 modules = [
-	{org = "sanjula", packageName = "resilient_event_router", moduleName = "resilient_event_router"}
+	{org = "sanjulaonline", packageName = "resilient_event_router", moduleName = "resilient_event_router"}
 ]
 

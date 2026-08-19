@@ -5,7 +5,7 @@ configurable timeout, retry, idempotency and circuit breaking.
 
 ```ballerina
 import ballerina/io;
-import sanjula/resilient_event_router as router;
+import sanjulaonline/resilient_event_router as router;
 
 public function main() returns error? {
     router:Router eventRouter = check new ({
@@ -93,7 +93,7 @@ semantics, fan-out to many subscribers, or non-HTTP transports. See
 Once the package is on Ballerina Central, import it and build:
 
 ```ballerina
-import sanjula/resilient_event_router as router;
+import sanjulaonline/resilient_event_router as router;
 ```
 
 ```bash
@@ -112,7 +112,7 @@ then declare it in the consuming package's `Ballerina.toml`:
 
 ```toml
 [[dependency]]
-org = "sanjula"
+org = "sanjulaonline"
 name = "resilient_event_router"
 version = "0.1.0"
 repository = "local"

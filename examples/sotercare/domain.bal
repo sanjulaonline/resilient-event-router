@@ -2,9 +2,9 @@
 //
 // Everything in this file answers "what does this event mean?". Nothing here
 // knows how the event is delivered; that is the job of the
-// sanjula/resilient_event_router package.
+// sanjulaonline/resilient_event_router package.
 
-import sanjula/resilient_event_router as router;
+import sanjulaonline/resilient_event_router as router;
 
 // Clinical-style severity used by the SoterCare API. It is intentionally finer
 // grained than the router's transport severity, which is the point of keeping

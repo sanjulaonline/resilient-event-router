@@ -1,11 +1,11 @@
-// Smallest useful consumer of sanjula/resilient_event_router: send an
+// Smallest useful consumer of sanjulaonline/resilient_event_router: send an
 // application event to an HTTP webhook and handle the typed outcome.
 //
 //   bal run -- -CwebhookUrl=http://localhost:8290/hook
 
 import ballerina/io;
 
-import sanjula/resilient_event_router as router;
+import sanjulaonline/resilient_event_router as router;
 
 configurable string webhookUrl = "http://localhost:8290/hook";
 

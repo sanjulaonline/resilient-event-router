@@ -331,7 +331,7 @@ modules = [
 ]
 
 [[package]]
-org = "sanjula"
+org = "sanjulaonline"
 name = "resilient_event_router"
 version = "0.1.0"
 dependencies = [
@@ -341,7 +341,7 @@ dependencies = [
 	{org = "ballerina", name = "time"}
 ]
 modules = [
-	{org = "sanjula", packageName = "resilient_event_router", moduleName = "resilient_event_router"}
+	{org = "sanjulaonline", packageName = "resilient_event_router", moduleName = "resilient_event_router"}
 ]
 
 [[package]]
@@ -353,7 +353,7 @@ dependencies = [
 	{org = "ballerina", name = "log"},
 	{org = "ballerina", name = "test"},
 	{org = "ballerinai", name = "observe"},
-	{org = "sanjula", name = "resilient_event_router"}
+	{org = "sanjulaonline", name = "resilient_event_router"}
 ]
 modules = [
 	{org = "sotercare", packageName = "alert_router", moduleName = "alert_router"}

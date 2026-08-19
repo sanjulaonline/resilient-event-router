@@ -1,6 +1,6 @@
 # Example: generic IoT
 
-Shows both extension points of `sanjula/resilient_event_router` on device
+Shows both extension points of `sanjulaonline/resilient_event_router` on device
 telemetry that has nothing to do with healthcare.
 
 ```text

@@ -37,7 +37,7 @@ public type ServiceUnavailableResponse record {|
     ErrorBody body;
 |};
 
-// Wire format produced by sanjula/resilient_event_router. The mock notifier
+// Wire format produced by sanjulaonline/resilient_event_router. The mock notifier
 // binds to it directly, which is also a check that the envelope is stable.
 public type EventEnvelope record {|
     string id;

@@ -1,7 +1,7 @@
 import ballerina/http;
 import ballerina/test;
 
-import sanjula/resilient_event_router as router;
+import sanjulaonline/resilient_event_router as router;
 
 isolated map<int> hits = {};
 

@@ -1,13 +1,13 @@
 // Consumer test.
 //
-// This package depends on sanjula/resilient_event_router the same way any
+// This package depends on sanjulaonline/resilient_event_router the same way any
 // other application would: through the published package, using only its
 // public API. Nothing here reaches into the library's internals.
 
 import ballerina/http;
 import ballerina/test;
 
-import sanjula/resilient_event_router as router;
+import sanjulaonline/resilient_event_router as router;
 
 const int RECEIVER_PORT = 8290;
 const string RECEIVER_URL = "http://localhost:8290/hook";

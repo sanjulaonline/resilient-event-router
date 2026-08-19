@@ -2,7 +2,7 @@
 
 Two dated layers. The first records the research behind the original SoterCare
 application (15 August 2026). The second records what changed when the reusable
-`sanjula/resilient_event_router` package was extracted from it (19 August 2026).
+`sanjulaonline/resilient_event_router` package was extracted from it (19 August 2026).
 
 ---
 
