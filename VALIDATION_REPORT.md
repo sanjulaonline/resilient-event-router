@@ -345,6 +345,50 @@ written purely to raise the number.
    `scripts/build-all.sh` and the CI workflow both stage it now; without that the
    CI coverage artifact would always have been empty.
 
+
+## GitHub Actions — first remote run
+
+Run [32242078866](https://github.com/sanjulaonline/resilient-event-router/actions/runs/32242078866),
+triggered by the initial push of commit `d1adb0b` to `main`. **Green on the
+first attempt**, 1m29s, all twelve steps passing on `ubuntu-latest`:
+
+```text
+Ballerina 2201.13.5 (Swan Lake Update 13)
+openjdk version "21.0.12" 2026-07-21 LTS
+
+library                 51 passing, 0 failing, 0 skipped
+examples/basic-webhook   4 passing, 0 failing, 0 skipped
+examples/generic-iot     3 passing, 0 failing, 0 skipped
+examples/sotercare      11 passing, 0 failing, 0 skipped
+```
+
+Identical to the Windows numbers, which matters most for the two
+environment-sensitive tests: the `ballerina/tcp` transport-retry mock and the
+100-strand concurrency tests both behave the same on Linux.
+
+The three CI defects found by local inspection are confirmed fixed:
+
+* `actions/setup-java@v4` with Temurin 21 provisioned correctly, and
+  `ballerina-platform/setup-ballerina@v1.1.4` resolved `2201.13.5`.
+* The `coverage-report` artifact uploaded at **256,072 bytes**. Under the
+  original step order it would have been empty, because `bal build`, `bal pack`
+  and `bal doc` clear `target/report` before the upload step ran.
+* The examples resolved the library from the local repository on a clean runner,
+  so the local-repository workflow is not dependent on this machine's
+  `~/.ballerina` state.
+
+Two non-blocking annotations were raised, neither affecting the published
+package:
+
+```text
+Node.js 20 is deprecated ... actions/cache@v3, actions/checkout@v4,
+  actions/setup-java@v4, actions/upload-artifact@v4 forced to run on Node.js 24
+setup-java v4 is deprecated ... migrate to actions/setup-java@v5
+```
+
+`actions/cache@v3` comes in transitively through `setup-ballerina`. These are
+worth clearing in a later release; they do not affect `0.1.0`.
+
 ## Not validated in this run
 
 * Docker image build. The Docker CLI is installed (28.4.0) but the daemon was
@@ -352,13 +396,6 @@ written purely to raise the number.
   unverified. It has been rewritten for the new two-package build (pack and
   publish the library to the local repository, then build the example) and needs
   a run before it is trusted.
-* GitHub Actions execution. `.github/workflows/ci.yml` has not been pushed or run
-  remotely. What was checked locally: the YAML parses, the twelve steps are in a
-  workable order, the shell in every `run:` block passes `bash -n`, the
-  `ballerina-platform/setup-ballerina` tag `v1.1.4` exists, and the command
-  sequence is the one actually executed on this machine. Whether the action
-  provisions `2201.13.5` correctly on `ubuntu-latest` can only be confirmed by
-  running it.
 * Publication to Ballerina Central. `bal push` to Central was not run and no
   credentials were used.
 * Sustained load. The concurrency tests use 100 strands in a single burst; there
